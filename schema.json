@@ -1,0 +1,57 @@
+{
+  "tables": {
+    "employees": [
+      { "column": "employee_id", "type": "INT" },
+      { "column": "first_name", "type": "VARCHAR(50)" },
+      { "column": "last_name", "type": "VARCHAR(50)" },
+      { "column": "department_id", "type": "INT" },
+      { "column": "hire_date", "type": "DATE" },
+      { "column": "salary", "type": "DECIMAL(10,2)" }
+    ],
+    "departments": [
+      { "column": "department_id", "type": "INT" },
+      { "column": "department_name", "type": "VARCHAR(100)" },
+      { "column": "location_id", "type": "INT" }
+    ],
+    "projects": [
+      { "column": "project_id", "type": "INT" },
+      { "column": "project_name", "type": "VARCHAR(100)" },
+      { "column": "start_date", "type": "DATE" },
+      { "column": "end_date", "type": "DATE" },
+      { "column": "department_id", "type": "INT" }
+    ],
+    "timesheets": [
+      { "column": "timesheet_id", "type": "INT" },
+      { "column": "employee_id", "type": "INT" },
+      { "column": "project_id", "type": "INT" },
+      { "column": "hours_worked", "type": "DECIMAL(5,2)" },
+      { "column": "work_date", "type": "DATE" }
+    ]
+  },
+  "relationships": [
+    {
+      "child_table": "employees",
+      "child_column": "department_id",
+      "parent_table": "departments",
+      "parent_column": "department_id"
+    },
+    {
+      "child_table": "projects",
+      "child_column": "department_id",
+      "parent_table": "departments",
+      "parent_column": "department_id"
+    },
+    {
+      "child_table": "timesheets",
+      "child_column": "employee_id",
+      "parent_table": "employees",
+      "parent_column": "employee_id"
+    },
+    {
+      "child_table": "timesheets",
+      "child_column": "project_id",
+      "parent_table": "projects",
+      "parent_column": "project_id"
+    }
+  ]
+}
