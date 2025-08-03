@@ -15,7 +15,7 @@ The system only uses **table structures (schema)**—not the actual data—ensur
 
 ---
 
-## ✅ 3. Step-by-Step Code Flow
+## ✅ 2. Step-by-Step Code Flow
 
 ### **Step 1: Load Schema**
 ```python
@@ -100,14 +100,14 @@ def retrieve_related_schema(user_query, top_k=1):
 
 ---
 
-## ✅ 4. Why This is Privacy-Focused
+## ✅ 3. Why This is Privacy-Focused
 - ✅ **No actual database data** is used—only schema structure is exposed.
 - ✅ **Local LLM** ensures no external API calls leak information.
 - ✅ **FAISS Index** runs locally, storing only embeddings derived from schema text.
 
 ---
 
-## ✅ 5. Output Example
+## ✅ 4. Output Example
 
 **User Query:**  
 > “Show total hours worked per project for the last 30 days”
